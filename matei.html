@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Studenti</title>
+
+		<style>
+			.main-table {
+				border: 1.4px solid blue;
+				border-spacing: 0;
+			}
+			.main-table thead {
+				background-color: red;
+				color: orange;
+			}
+			.main-table td {
+				border: 1px solid blue;
+				}
+			
+		</style>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                <script>
+			$(function(){
+				var nume,prenume;
+				$('#submit-formular').click(function(){
+					nume=$('#nume').val();
+					prenume=$('#prenume').val();
+				$('.main-table tr:last').after('<tr> <td>' + nume + '</td> <td>' + prenume + '</td> </tr>'); 
+				
+				});
+			$('#formular').submit(function(e) {
+                                     
+                              		e.preventDefault();
+					alert($('#nume').val());
+					alert($('#prenume').val());
+					});
+			});
+			
+		</script>	
+	</head>
+<body>
+<h1>Studenti</h1>
+<hr>
+	<table class="main-table">
+	
+		<thead>
+			<tr>
+				<td>nume</td>
+				<td>prenume</td>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr>
+				<td>Stoica</td>
+				<td>Marian</td>
+			</tr>
+			<tr>
+				<td>Avram</td>
+				<td>Sergiu</td>
+			</tr>
+		</tbody>
+	</table>
+<p class="click-pt-formular">Introduceti un nou student</p>
+ 
+                <form id="formular">
+                        <input id="nume" type="text" />
+			<input id="prenume" type="text" />
+                        <input id="submit-formular" type="submit" />
+                </form>
+
+</body>
+</html>
